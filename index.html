@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruby</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: linear-gradient(-45deg, #000000, #1a0000, #300000, #000000);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle linear infinite;
+    }
+
+    @keyframes twinkle {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.5);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+    }
+
+    .card {
+      backdrop-filter: blur(10px);
+      background: rgba(20, 20, 20, 0.75);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="stars" id="stars"></div>
+
+  <div class="min-h-screen flex items-center justify-center p-6 relative z-10">
+
+    <div class="card max-w-4xl w-full rounded-3xl shadow-2xl p-8 border border-red-900">
+
+      <div class="text-center">
+
+        <img
+          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAkLCgoLDhgQDg0NDh0VFhEYIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQ0NDg0NDisZFRkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAGAAMEBQcBAv/EAEYQAAEDAgMEBQcHBQYHAAAAAAEAAgMEEQUSITFBUQYTImFxgZEUMqGx0fAHFCNSYnKC4RYzQ1Njc5OjssLSJDRTVJPS/8QAGAEBAQEBAQAAAAAAAAAAAAAAAAECAwT/xAAgEQEBAAICAgIDAQAAAAAAAAAAAQIRAyExBBJBUWFx/9oADAMBAAIRAxEAPwD7aREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAf/2Q=="
+          class="w-52 h-52 rounded-full object-cover mx-auto border-4 border-red-700 shadow-lg shadow-red-900/50 mb-6"
+        >
+
+        <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+          Ruby 
+        </h1>
+
+        <p class="text-zinc-300 text-lg mb-8 tracking-widest">
+          I'm covered in blood you don't care?
+        </p>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <a
+          href="https://steamcommunity.com/profiles/76561199421687336"
+          target="_blank"
+          class="bg-zinc-800 hover:bg-red-900/70 p-6 rounded-2xl transition duration-300 hover:scale-105 border border-zinc-700"
+        >
+          <h2 class="text-2xl font-bold mb-2">Steam</h2>
+          <p class="text-zinc-300">
+            Steam profilim.
+          </p>
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@ismail_35_03"
+          target="_blank"
+          class="bg-zinc-800 hover:bg-black/60 p-6 rounded-2xl transition duration-300 hover:scale-105 border border-zinc-700"
+        >
+          <h2 class="text-2xl font-bold mb-2">TikTok</h2>
+          <p class="text-zinc-300">
+            TikTok hesabım.
+          </p>
+        </a>
+
+      </div>
+
+      <div class="mt-10 bg-black/50 rounded-2xl p-6 border border-red-900">
+        <h2 class="text-3xl font-bold mb-4 text-red-400">
+          Hakkımda
+        </h2>
+
+        <p class="text-zinc-300 leading-relaxed">
+          Hi! I'm Ruby.
+        </p>
+      </div>
+
+      <div class="mt-10 text-center text-zinc-500 text-sm">
+        © 2026 Ruby Hub — Tüm hakları saklıdır.
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    const starsContainer = document.getElementById("stars");
+
+    for (let i = 0; i < 140; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.animationDuration = Math.random() * 3 + 2 + "s";
+      star.style.opacity = Math.random();
+
+      starsContainer.appendChild(star);
+    }
+  </script>
+
+</body>
+</html>
